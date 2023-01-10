@@ -7,17 +7,29 @@
     <title>Document</title>
 </head>
 <body background="red">
-    <h2>putito</h2>
+    
     <h1>Hola desde HTML</h1>
     <script>
-        var nombre = 'Emmanuel';
-        var edad = '20';
-        var peso = '100';
-        var becado = 'no';
+      //  var nombre = 'Emmanuel';
+      //var nombre = prompt('dame tu nombre')
+      
+       var edad = prompt('ingresa tu edad');
+
+        if(edad > 100 || edad <= 0){
+            console.log('esta edad no es correcta ingresa otra vez');
+        }
+        else if(edad>=18){
+            console.log('eres mayor de edad');
+        }else if (edad < 18){
+            console.log('eres menor de edad');
+        }
+       // var peso = '100';
+      //  var becado = 'no';
 
 
-        console.log('Hola mi nombre es ' + nombre + ' mi edad es de ') + edad;
-        console.log('Hola mi nombre es ${nombre} mi edad es ${edad}');
+        //console.log('Hola mi nombre es ' + nombre + ' mi edad es de ') + edad;
+        //console.log('Hola mi nombre es ${nombre} mi edad es ${edad}');
+        //console.log('hola desde java script mi nombre es ${nombre})
     </script>
 </body>
 </html>
