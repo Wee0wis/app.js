@@ -20,9 +20,4 @@
         }
 
     },
-}).mount('#app'); */
-
-
-Vue.createApp({
-
-});
+}).mount('#app');  */
