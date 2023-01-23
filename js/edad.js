@@ -1,30 +1,32 @@
 Vue.createApp({
     data(){
         return{
+         edad:'',
+         resultado:''
         }
     },
     methods: {
        calcularedad(){
+/* 
+            var edad=prompt("ingresa tu edad"); */
 
-            var edad=prompt("ingresa tu edad");
-
-         if(edad >= 18 ){
-            this.edad = mayor;
+         if(this.edad >= 18){
+            this.resultado='mayor';
          }
-         if (edad < 18)
+         else /* if (edad < 18) */
          {
-            this.edad = menor;
+            this.resultado='menor';
          }
-         if (edad <0){
+        /*  if (edad <0){
             console.log("esta mal esta edad")
          }
          if(edad > 100){
-            console.log("tas muy viejo")
+            console.log("tas muy viejo") */
          }
-         
+          
        
            
-        } 
-    }    
+      } 
+      
     
 }).mount('#app')
