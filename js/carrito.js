@@ -1,0 +1,12 @@
+Vue.createApp({
+    data(){
+        return{
+            producto:'',
+            carrito:[
+                'cebolla',
+                'tomate',
+                'papas'
+            ]
+        }
+    }
+}).mount('#App')

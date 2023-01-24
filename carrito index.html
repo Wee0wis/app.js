@@ -1,0 +1,99 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-if="becado==true">ya tengo beca </h1>
+        <h1 v-else>ya no tengo beca </h1>
+        <button @click="conbeca()">Estas becado</button>
+        <button @click="sinbeca()">No estas becado</button>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="condicionales.js"></script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-if="becado">Ya</h1>
+        <h1 v-else>ya no tengo beca </h1>
+        <button @click="becado=true">Estas becado</button>
+        <button @click="becado=false">No estas becado</button>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="condicionales.js"></script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<style>
+    table, th, td {
+    border: 1px solid black;
+  
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(163, 102, 23);
+    scroll-behavior: smooth;
+}
+h1{
+    text-align: center;
+}
+button{
+    text-align: center;
+}
+</style>
+<body>
+    <div id="App">
+        <h1>Mis compras</h1>
+        <input v-model="producto" type="text" placeholder="Nombre del producto">
+        <button @click="agregarproducto()">Agregar producto</button>
+        <button @click="carrito=[]">Quitar producto</button>
+        <ul>
+            <li v-for="producto in carrito">
+                {{producto}}
+
+            </li>
+
+        </ul>
+        <table >
+            <thead >
+                <td>productos</td>
+            </thead>
+            <tbody>
+                <tr v-for="producto in carrito">
+                    <td>{{producto}}</td>
+                    
+                </tr>
+            </tbody>
+          </table>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="Carrito.js"></script>
+
+</body>
+</html>

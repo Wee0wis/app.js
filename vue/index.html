@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-      <h1>Captura tu edad</h1>
+    <div id="App">
+      <!-- <h1>Captura tu edad</h1>
       <input v-model="edad" type="number">
       <button @click="calcularedad()">calcular</button>
       <p>tu eres {{resultado}}</p>
@@ -18,14 +18,27 @@
       <video width="320" height="240" controls >
       <source src="../elementos/videoplayback.mp4" type="video/mp4">
       Your browser does not support the video tag.
-      </video>
+      </video> -->
+
+      <h1>mis compras</h1>
+      <input placeholder="nombre del producto" type="text">
+      <button>Agregar</button>
+
+
+      <ul>
+       <li v-for="producto in carrito">
+        {{producto}}
+       </li>
+      </ul>
+
+
     </h1> 
     </div>
       
       
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="../js/edad.js"></script>
+    <script src="../js/carrito.js"></script>
     
 </body>
 </html>
