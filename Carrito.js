@@ -1,18 +1,23 @@
 Vue.createApp({
     data(){
         return{
-            carrito: [
-                'Cebolla',
-                'Tomate',
-            ],
-            producto:''
+                producto:[],
+                nombre: '',
+                precio: '',
+                cantidad: ''    
+                
 
             }
         },
         methods:{
             agregarproducto(){
-                this.carrito.push(this.producto)
-                this.producto='';
+                const producto = {
+                    producto: this.nombre,
+                    producto: this.precio,
+                    producto: this.cantidad
+                }
+                this.producto.push(producto)
+               producto=''; 
             }
             
         }
