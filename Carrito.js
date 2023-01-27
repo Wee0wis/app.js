@@ -1,10 +1,11 @@
 Vue.createApp({
     data(){
         return{
-                producto:[],
+                productos:[],
                 nombre: '',
                 precio: '',
-                cantidad: ''    
+                cantidad: '',
+                colortable: 'success'
                 
 
             }
@@ -12,12 +13,12 @@ Vue.createApp({
         methods:{
             agregarproducto(){
                 const producto = {
-                    producto: this.nombre,
-                    producto: this.precio,
-                    producto: this.cantidad
+                    nombre: this.nombre,
+                    precio: this.precio,
+                    cantidad: this.cantidad
                 }
-                this.producto.push(producto)
-               producto=''; 
+                this.productos.push(producto);
+               
             }
             
         }
