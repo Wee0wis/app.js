@@ -15,7 +15,7 @@
     
     <h1>SELECCIONA LA FRUTA QUE PREFIERAS</h1>
     <select v-model="selector">
-        <option value="manzana">Manzana</option>
+        <option value="Manzana">Manzana</option>
         <option value="pera">pera</option>
         <option value="platano">platano</option>
         <option value="durazno">durazno</option>
@@ -23,13 +23,13 @@
     </select>
 
     <div>
-    <img :src="frutas" >
+   <img :src="selectfrutas"> 
     </div>
 
 
     </div>
     
-    <script src="../cdnVue.js"></script>
-    <script src="app.js"></script>
+    <script src="cdnVue.js"></script>
+    <script src="frutas.js"></script>
 </body>
 </html>

@@ -5,9 +5,26 @@ Vue.createApp({
         }
     },
     computed:{
-        fruta(){
-            if(seletor = "manzana"){
-                return 'https://8e9d5b8b8dcb9208ef3f-01db2a53ae0368d03387780ee86ead55.ssl.cf2.rackcdn.com/0000000041480_CF_hyvee_default_large.jpeg'
+        selectfrutas(){
+            if(this.selector == "Manzana"){
+                return '../elementos/manzana.jpg';
+        
+            }
+            if(this.selector == "pera"){
+                return '../elementos/pera.jfif';
+        
+            }
+            if(this.selector == "platano"){
+                return '../elementos/platano.jfif';
+        
+            }
+            if(this.selector == "durazno"){
+                return '../elementos/Durazno.webp';
+        
+            }
+            if(this.selector == "coco"){
+                return '../elementos/coco.jfif';
+        
             }
             
         }
