@@ -5,7 +5,8 @@ Vue.createApp({
                 nombre: '',
                 precio: '',
                 cantidad: '',
-                colortable: 'success'
+                descripcion:'',
+                
                 
 
             }
