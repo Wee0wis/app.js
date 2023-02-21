@@ -2,12 +2,19 @@ Vue.createApp({
     data() {
         return {
             pokedex: [],
-            
+            loading: null,
+            limite: 0
         }
+    },
+    mounted() {
+        this.getPokemon();
     },
     methods: {
             async getPokemon() {
-                for (let i = 1; i <= 151; i++) {
+                
+                this.loading = true;
+                
+                for (let i = 1; i <= this.limite; i++) {
 
                     const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + i, {
                         method: 'GET'
@@ -15,7 +22,7 @@ Vue.createApp({
                     const data = await response.json();
                     this.pokedex.push(data);
                 }
-
+                this.loading = false;
                 
              
             }

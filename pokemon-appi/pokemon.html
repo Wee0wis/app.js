@@ -19,11 +19,35 @@
 
         <h1 class="text-center">POKEDEX</h1>
 
+
+        <select class="form-select" aria-label="Default select example" v-model="limite">
+            <option selected>define cuantos necesitas</option>
+            <option value="10">10</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="386">386</option>
+          </select>
         <button class="" @click="getPokemon()">Obtener Pokemon</button>
 
 
 
-        <div v-if="pokedex.length > 0">
+
+         <center v-if="loading == true">
+            <img src="https://th.bing.com/th/id/R.12f496c8081f997a2773b899d648a758?rik=BdgvCKkAC6cNuA&riu=http%3a%2f%2fimg0.joyreactor.com%2fpics%2fpost%2fPokemon-pixel-art-gif-gastly-1256773.gif&ehk=0MB1ciNBO2Yls1LB%2bvuc6PSW2I0CXat14l%2fWYR5KXl4%3d&risl=&pid=ImgRaw&r=0" alt="">
+            <h1 class="">CARGANDO....</h1>
+            <audio controls autoplay hidden loop>
+                <source src="/elementos/mustard-ballin-ft-roddy-rich-sped-up.mp3" type="audio/mp3">
+            </audio>
+         </center>
+
+         
+
+
+
+
+
+
+        <div v-if="loading == false">
             <div class="d-flex flex-wrap">
             <div v-for="pokedex in pokedex" class="card m-3" style="width: 18rem;">
                 <h1 class="card-title  text-center">{{pokedex.name}}</h1>
