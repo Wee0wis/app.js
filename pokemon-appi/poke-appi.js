@@ -3,6 +3,7 @@ Vue.createApp({
         return {
             pokedex: [],
             loading: null,
+            pokedata: null,
             limite: 0
         }
     },

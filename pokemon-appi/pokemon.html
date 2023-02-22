@@ -26,6 +26,8 @@
             <option value="50">50</option>
             <option value="100">100</option>
             <option value="386">386</option>
+            <option value="500">500</option>
+            <option value="1000">1000</option>
           </select>
         <button class="" @click="getPokemon()">Obtener Pokemon</button>
 
@@ -36,8 +38,10 @@
             <img src="https://th.bing.com/th/id/R.12f496c8081f997a2773b899d648a758?rik=BdgvCKkAC6cNuA&riu=http%3a%2f%2fimg0.joyreactor.com%2fpics%2fpost%2fPokemon-pixel-art-gif-gastly-1256773.gif&ehk=0MB1ciNBO2Yls1LB%2bvuc6PSW2I0CXat14l%2fWYR5KXl4%3d&risl=&pid=ImgRaw&r=0" alt="">
             <h1 class="">CARGANDO....</h1>
             <audio controls autoplay hidden loop>
-                <source src="/elementos/mustard-ballin-ft-roddy-rich-sped-up.mp3" type="audio/mp3">
-            </audio>
+                <!-- <source src="horse.ogg" type="audio/ogg"> -->
+                <source src="/elementos/aaa.mp3" type="audio/mpeg">
+              
+              </audio>
          </center>
 
          
@@ -49,20 +53,20 @@
 
         <div v-if="loading == false">
             <div class="d-flex flex-wrap">
-            <div v-for="pokedex in pokedex" class="card m-3" style="width: 18rem;">
+            <div v-for="pokedex in pokedex" class="card m-3"  data-bs-toggle="modal" data-bs-target="#exampleModal" @click="pokedata = pokedex" style="width: 18rem;">
                 <h1 class="card-title  text-center">{{pokedex.name}}</h1>
                 <img :src="pokedex.sprites.other.home.front_default" class="card-img-top">
                 <div class="card-body">
                     <h3>habilidades</h1>
                         <small class="badge bg-secondary mx-1 mb-2" v-for="pokedex in pokedex.abilities"
                             class="card-text">{{pokedex.ability.name}}</small>
-
-                        <h3>tipo</h1>
+ 
+                           <h3>tipo</h1>
                             <small class="badge bg-secondary mx-1  mb-5"
                                 v-for="pokedex in pokedex.types">{{pokedex.type.name}}</small>
 
                             <h3>estadisticas</h3>
-
+ 
 
 
                             <div class="progress  mb-5" v-for="pokedex in pokedex.stats " role="progressbar"
@@ -70,7 +74,7 @@
                                 <div class="progress-bar" :style="'width: '+pokedex.base_stat+'%'">
                                     {{pokedex.stat.name}}:{{pokedex.base_stat}}</div>
                             </div>
-
+ 
                             <p>
                                 <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseWidthExample" aria-expanded="false"
@@ -94,7 +98,58 @@
             </div>
         </div>
 
+        
+        <!-- Modal -->
+        <div  class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div v-if="pokedata!=null" class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> {{pokedata.name}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <img :src="pokedata.sprites.other.home.front_default" class="card-img-top">
+                 <div class="modal-body">
+                    <h3>habilidades</h1>
+                        <small class="badge bg-secondary mx-1 mb-2" 
+                            class="card-text" v-for="habilidad in pokedata.abilities" >{{habilidad.ability.name}}</small>
+                            
 
+
+                    <!-- <h3>tipo</h1>
+                        <small class="badge bg-secondary mx-1  mb-5"
+                        v-for="tipo in pokedata.abilities">{{tipo.type.name}}</small>
+ -->
+                        <h3>estadisticas</h3>
+
+
+
+                        <!-- <div class="progress  mb-5"  role="progressbar" v-for="estadisticas in pokedata.abilities" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" :style="'width: '+pokedata.base_stat+'%'">
+                                {{estadisticas.stat.name}}:{{estadisticas.base_stat}}</div>
+                        </div>
+ -->
+                        <!-- <p>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseWidthExample" aria-expanded="false"
+                                aria-controls="collapseWidthExample">
+                                JUEGOS EN LOS QUE APARECE
+                            </button>
+                        </p>
+                        <div style="min-height: 120px;">
+                            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                                <div class="class= badge bg-primary mx-1" v-for="versiones in pokedata.abilities"
+                                    style="width: 100px;">
+                                    {{versiones.version.name}}
+                                </div>  -->
+
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+               <!--  <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+            </div>
+        </div>
 
 
 
